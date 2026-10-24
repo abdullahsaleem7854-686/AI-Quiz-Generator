@@ -53,7 +53,7 @@ else:
         text = "\n".join(p.extract_text() or "" for p in PdfReader(f).pages)
 
 # App Logic
-if st.button("Quiz Banao") and text:
+if st.button("make a quiz") and text:
     with st.spinner(f"Generating {difficulty} Quiz..."):
         st.session_state.quiz = generate(text, n, difficulty)
         st.session_state.submitted = False
